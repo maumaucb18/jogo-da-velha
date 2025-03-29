@@ -138,9 +138,6 @@ flex-direction: column;
   border-radius:50%;
 
 }
-.hidden {
-  display: none;
-}
 
 #carta {
   position: fixed;
@@ -152,4 +149,20 @@ flex-direction: column;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
+  width: 90%; /* Garante que a carta não fique maior que a tela */
+  max-width: 400px; /* Evita que fique muito grande */
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 480px) {
+  #carta {
+      width: 95%; /* Reduz a largura em telas pequenas */
+      font-size: 0.9rem; /* Diminui um pouco o texto */
+      padding: 15px;
+  }
 }
