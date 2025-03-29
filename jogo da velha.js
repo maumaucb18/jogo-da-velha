@@ -35,14 +35,21 @@ const startGame = () => {
 };
 
 const endGame = (isDraw) => {
-  if (isDraw) { winningMessageTextElement.innerText ='Empate!'
-  } else { winningMessageTextElement.innerText = isCirculoTurn
-      ? ' O Circulo Venceu!!'
-      : ' X venceu!!'};
+  if (isDraw) { 
+    winningMessageTextElement.innerText = 'Empate!';
+  } else { 
+    if (isCirculoTurn) {
+      winningMessageTextElement.innerText = 'O Círculo Venceu!!';
 
-  winmessage.classList.add('show-winnig-message')
+      // Exibe a carta quando o círculo vencer
+      document.getElementById("carta").classList.remove("hidden");
 
-  
+    } else {
+      winningMessageTextElement.innerText = 'X venceu!!';
+    }
+  }
+
+  winmessage.classList.add('show-winnig-message');
 };
 
 const checkForWinn = currentPlayer => {
